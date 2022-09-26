@@ -20,10 +20,10 @@ const CreditAndDebitCards = () => {
           leftIcon={
             <IconContaniner>
               <Image
-                source={LOCAL_IMAGES.phonepe}
+                source={LOCAL_IMAGES.plusicon}
                 style={{
-                  width: SIZE.xl,
-                  height: SIZE.xl,
+                  width: SIZE.m,
+                  height: SIZE.m,
                 }}
               />
             </IconContaniner>

@@ -10,10 +10,11 @@ export const LOCAL_IMAGES = {
     success: require('../assets/images/success.png'),
     upi: require('../assets/images/upi.png'),
     wallets: require('../assets/images/wallets.png'),
+    plusicon: require('../assets/images/plus.png'),
 }
 
 export const BackIcon = (props: any) => (
-    <Ionicons name='chevron-back' color={COLORS.white} size={SIZE.l} {...props} />
+    <Ionicons {...props} name='chevron-back' color={COLORS.white} size={SIZE.l} />
 )
 
 export const ForwardIcon = (props: any) => (

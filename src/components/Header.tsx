@@ -1,8 +1,9 @@
-import {Pressable, StyleSheet, Text, View} from 'react-native';
+import {TouchableOpacity, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {commonStyles} from '../utils/commonStyles';
 import {COLORS, SIZE} from '../utils/theme';
-import { BackIcon } from '../utils/images';
+import {BackIcon} from '../utils/images';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Header = ({
   title,
@@ -19,7 +20,12 @@ const Header = ({
         commonStyles.alignItemsCenter,
         commonStyles.p12,
       ]}>
-      <BackIcon onPress={onBackClick} size={SIZE.xl} />
+      <BackIcon
+        onPress={onBackClick}
+        size={SIZE.xl}
+        style={{color: '#fff', fontSize: 22, overflow: 'hidden', marginLeft: -4, zIndex: 999999}}
+      />
+
       <Text
         style={[
           commonStyles.textCenter,

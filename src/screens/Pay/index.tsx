@@ -5,13 +5,17 @@ import {STRINGS} from '../../utils/strings';
 import {FilledButton, Header} from '../../components';
 import {COLORS, SCREEN_WIDTH, SIZE} from '../../utils/theme';
 
-const Pay = ({navigation,route}:any) => {
-  const title = route.params?.title||STRINGS.wallets;
+const Pay = ({navigation, route}: any) => {
+  const title = route.params?.title || STRINGS.wallets;
   return (
     <View style={[commonStyles.container]}>
-      <Header title={title} onBackClick={() => {
-        navigation.pop()
-      }} />
+      <Header
+        title={title}
+        onBackClick={() => {
+          console.log('hello');
+          navigation.pop();
+        }}
+      />
       <View style={[commonStyles.m12]}>
         <Text
           style={{color: COLORS.primary, fontSize: SIZE.m, fontWeight: '700'}}>
