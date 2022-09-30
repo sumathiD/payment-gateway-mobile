@@ -11,6 +11,7 @@ export const LOCAL_IMAGES = {
     upi: require('../assets/images/upi.png'),
     wallets: require('../assets/images/wallets.png'),
     plusicon: require('../assets/images/plus.png'),
+    arrowicon: require('../assets/images/arrowicon.png'),
 }
 
 export const BackIcon = (props: any) => (

@@ -12,7 +12,6 @@ const Pay = ({navigation, route}: any) => {
       <Header
         title={title}
         onBackClick={() => {
-          console.log('hello');
           navigation.pop();
         }}
       />

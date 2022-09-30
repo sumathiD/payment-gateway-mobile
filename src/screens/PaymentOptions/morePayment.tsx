@@ -5,7 +5,7 @@ import {COLORS, SIZE} from '../../utils/theme';
 import {Card, IconContaniner, PaymentRow} from '../../components';
 import {STRINGS} from '../../utils/strings';
 import {LOCAL_IMAGES} from '../../utils/images';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
 const options = [
   {
@@ -32,43 +32,49 @@ const options = [
 const MorePayment = () => {
   const navigation = useNavigation();
   const navigateTo = (title: string) => {
-    navigation.navigate('Pay',{title})
-  }
+    navigation.navigate('Pay', {title});
+  };
 
   return (
     <View style={[commonStyles.mb12, commonStyles.mh24]}>
-      <Text style={[styles.title, commonStyles.mb8]}>{STRINGS.morePaymentoptions}</Text>
+      <Text style={[styles.title, commonStyles.mb8]}>
+        {STRINGS.morePaymentoptions}
+      </Text>
       <FlatList
         data={options}
         keyExtractor={(item, index) => item.id}
         renderItem={({item, index}) => (
-            <View style={commonStyles.mb8}>
-          <Card
-          >
-            <PaymentRow
-            onPress={()=>{
-              navigateTo(item.label)
-            }}
-              leftIcon={
-                <IconContaniner
-                containerStyle={{
-                    backgroundColor: COLORS.primary
+          <View style={commonStyles.mb8}>
+            <Card>
+              <PaymentRow
+                onPress={() => {
+                  navigateTo(item.label);
                 }}
-                >
+                leftIcon={
+                  <IconContaniner
+                    containerStyle={{
+                      backgroundColor: COLORS.primary,
+                    }}>
+                    <Image
+                      source={item.image}
+                      style={{
+                        width: SIZE.xl,
+                        height: SIZE.xl,
+                        resizeMode: 'contain',
+                      }}
+                    />
+                  </IconContaniner>
+                }
+                label={item.label}
+                rightIcon={
                   <Image
-                    source={item.image}
-                    style={{
-                      width: SIZE.xl,
-                      height: SIZE.xl,
-                      resizeMode:'contain'
-                    }}
-                  />
-                </IconContaniner>
+                      source={LOCAL_IMAGES.arrowicon}
+              />
+              
+                // <Text style={{fontSize: SIZE.xl}}>{'>'}</Text>
               }
-              label={item.label}
-              rightIcon={<Text style={{fontSize: SIZE.xl}}>{'>'}</Text>}
-            />
-          </Card>
+              />
+            </Card>
           </View>
         )}
       />
